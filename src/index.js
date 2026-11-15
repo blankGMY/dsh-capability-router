@@ -1,4 +1,4 @@
-import { projectToolSchema, validateJsonSchemaValue } from '@deepseek-ai/dsh-tools';
+import { ToolsService, projectToolSchema, validateJsonSchemaValue } from '@deepseek-ai/dsh-tools';
 import { ToolExecutionPipeline, executeToolBatch } from '@deepseek-ai/dsh-tools/pipeline';
 import { createMcpToolDefinition } from '@deepseek-ai/dsh-mcp-client';
 import { normalizeConfig } from './config.js';
@@ -16,6 +16,7 @@ const restored=globalThis[Symbol.for('@gmy/dsh-capability-router/restored')] ??=
 export async function apply(ctx,raw={}) {
   const config=normalizeConfig(raw);
   if (!config.enabled) return;
+  if(!(ctx.get('tools') instanceof ToolsService))throw new Error('capability-router must share the host DSH core packages; duplicate peer copies would break scope routing. Link peers to the host installation before enabling this plugin.');
   const manager=new ManagedServers(ctx,config,{createMcpToolDefinition});
   await manager.initialize();
   ctx.effect(()=>()=>manager.dispose());

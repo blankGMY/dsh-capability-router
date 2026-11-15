@@ -26,6 +26,8 @@ dsh plugin --profile web add github:blankGMY/dsh-capability-router
 
 Restart DSH after installation. The package includes its own bundle patch. No npm publication is required for GitHub installation.
 
+The plugin must resolve its DSH peers from the **same core package instances as the host**, not just the same version. A startup guard refuses duplicate core copies before changing any tool registration, because DSH scope identities are module-local. If your package manager creates duplicates, link the profile's DSH peers to the host runtime packages; do not disable the guard.
+
 Optional profile overrides in `cordis.patch.yml`:
 
 ```yaml

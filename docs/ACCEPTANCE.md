@@ -4,12 +4,12 @@ Date: 2026-11-16. This report contains sanitized measurements, not private promp
 
 ## Automated tests
 
-**21 tests passed** on both:
+**22 tests passed** on both:
 
 - Windows 11, Node 24.18.1, pinned DSH core 0.2.2-rc.1.
 - Raspberry Pi 4B / ARM64, Node 24.14.0, the installed DSH core 0.2.2-rc.1.
 
-Commands: `npm test` (8 tests), `npm run test:runtime` (13 tests). Runtime tests use the real DSH tool registry, guards, scopes, native execution pipeline and V4 persistence relationship validator. MCP lifecycle tests spawn a local protocol fixture.
+Commands: `npm test` (8 tests), `npm run test:runtime` (14 tests). Runtime tests use the real DSH tool registry, guards, scopes, native execution pipeline and V4 persistence relationship validator. MCP lifecycle tests spawn a local protocol fixture. A startup compatibility test also rejects duplicate host-core copies before they can break scope identities.
 
 Covered: catalogs larger than 255 tools, Chinese/English retrieval, exact IDs, pagination, source filtering, schema versions, late registration, removed tools, denied and conditional tools, inherited child restrictions, media and presenter delegation, metadata/finalizers/context, cancellation, bounded concurrency, exclusive barriers, unload/reload, stateful sessions, idle reconnection and writes whose responses are lost.
 

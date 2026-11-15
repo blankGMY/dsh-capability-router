@@ -14,6 +14,9 @@ import {KNOWN_SESSION_EVENT_TYPES} from '@deepseek-ai/dsh-session';
 import {createAssistantMessage} from '@deepseek-ai/dsh-llm';
 
 const kernel={projectToolSchema,validateJsonSchemaValue,ToolExecutionPipeline,executeToolBatch};
+test('duplicate host core copies fail before touching registrations or scope routing',async()=>{
+  await assert.rejects(plugin.apply({get:()=>({})},{}),/share the host DSH core/);
+});
 function fixture(name,body=async args=>args,extra={}) {
   return {name,description:`Fixture ${name}`,parameters:{type:'object',properties:{value:{type:'string'}},required:['value'],additionalProperties:false},
     output:{schema:{type:'object'},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}]},execute:body,...extra};

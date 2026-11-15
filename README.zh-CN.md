@@ -12,6 +12,8 @@ dsh plugin --profile web add github:blankGMY/dsh-capability-router
 
 重启 DSH 后，照常提出任务即可。模型通过三个固定入口工作：
 
+插件必须复用宿主同一份 DSH 核心包实例，不能只保证版本号相同却另外安装一份。启动检查会在注册工具之前拒绝重复核心包，避免作用域检查失效；如遇该错误，应将插件的核心包依赖链接到宿主安装位置，不要关闭检查。
+
 1. `capability_search`：检索当前会话有权使用的完整目录，支持中文别名、来源筛选和分页。
 2. `capability_describe`：读取指定工具的完整参数和版本。
 3. `capability_call`：校验参数后，通过 DSH 原执行管线调用真实工具。
