@@ -2,6 +2,8 @@
 
 Keep installed capabilities available without sending every tool schema to the model on every request.
 
+Supports English and Chinese use. Search matches tool names and descriptions directly; Chinese keyword expansion and configurable aliases provide additional discovery paths. The native DSH plugin information page includes English and Chinese descriptions. Search quality depends on the registered tool metadata; this is keyword matching, not automatic translation of every tool.
+
 **Compatibility:** DeepSeek Harness **0.2.2-rc.1**, Node **24+**. This project uses pre-stable DSH executor APIs and intentionally pins its peer versions. It is not an access-control bypass.
 
 ## How it works

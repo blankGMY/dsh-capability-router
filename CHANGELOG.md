@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- Add Chinese and English descriptions for the native DSH plugin information page.
+- Export package metadata and locale resources, and include translations in installable archives.
+- Runtime routing behavior is unchanged.
+
 ## 0.1.0
 
 - Scope-aware search, selected schema disclosure, and guarded native dispatch.

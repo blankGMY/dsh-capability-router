@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Capability Router",
+    "description": "Discover and call installed DSH tools on demand. Search MCP and plugin capabilities by Chinese keywords, exact names, or source, and fetch full parameters only when needed to reduce tool-definition overhead. Supports pinned tools, complete catalog pagination, parameter and version checks, while preserving DSH permissions, native image attachments, and session recovery. Optional managed MCP connections provide cached discovery, first-call connection, and idle reaping for stateless services. Describe your task naturally without manually switching tools."
+  }
+}

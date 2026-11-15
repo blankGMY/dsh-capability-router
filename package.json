@@ -1,15 +1,18 @@
 {
   "name": "@gmy/dsh-capability-router",
-  "version": "0.1.0",
-  "description": "Progressive tool discovery for DSH with scope-aware native dispatch and optional lazy MCP connections.",
+  "version": "0.1.1",
+  "description": "On-demand discovery and guarded calling of installed DSH tools, with Chinese search aliases, selected schema loading, native media preservation, and optional cached MCP connections.",
   "type": "module",
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
-    "./cordis.patch.yml": "./cordis.patch.yml"
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
   },
   "files": [
     "src",
+    "locale",
     "cordis.patch.yml",
     "README.md",
     "docs",
