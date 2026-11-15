@@ -1,0 +1,3 @@
+- insert:
+    - id: capability-router
+      name: '@gmy/dsh-capability-router'
